@@ -1,0 +1,47 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.8.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+
+idea.module {
+    downloadSources = true
+    downloadJavadoc = true
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.springframework.security:spring-security-core'
+    compile 'org.flywaydb:flyway-core'
+
+    compileOnly 'org.projectlombok:lombok'
+
+    runtime 'org.postgresql:postgresql'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

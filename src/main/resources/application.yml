@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:10001/iam
+    username: postgres
+    password: secret
+logging:
+  level:
+    org.springframework.jdbc: debug
+    org.springframework.jdbc.core.StatementCreatorUtils: trace
+    org.springframework.transaction: debug

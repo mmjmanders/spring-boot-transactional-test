@@ -1,0 +1,8 @@
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:postgresql://localhost:10002/iam
+    username: postgres
+    password: secret
+
+---

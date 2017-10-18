@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=iam
+    ports:
+      - '10001:5432'
+
+  test-db:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=iam
+    ports:
+      - '10002:5432'
